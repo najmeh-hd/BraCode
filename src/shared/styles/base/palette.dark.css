@@ -1,0 +1,23 @@
+:root {
+  color-scheme: dark;
+
+   /* پس‌زمینه‌ها */
+  --background-primary: #1a1e26;
+  --background-secondary: #13181f;
+  --surface: #0f1418;
+  --card: #1a1f26;
+  
+  /* متن‌ها */
+  --foreground: #e8eaed;
+  --foreground-secondary: #9da3af;
+  
+  /* رنگ‌های اکشن */
+  --primary: #eb5c6f;
+  --primary-hover: #d65768;
+  --accent: #f9d95e;
+  --accent-hover: #e4c658;
+  --success: #52c7a4;
+  
+  /* حاشیه */
+  --border: #2a2f36;
+}

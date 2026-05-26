@@ -1,0 +1,23 @@
+html.light,
+html[data-theme="light"] {
+  color-scheme: light;
+
+  --background-primary: #ffffff;
+  --background-secondary: #fcfbf9;
+  --surface: #fafafa;
+  --card: #ffffff;
+  
+  /* متن‌ها */
+  --foreground: #1a1f26;
+  --foreground-secondary: #6c7280;
+  
+  /* رنگ‌های اکشن */
+  --primary: #eb5c6f;
+  --primary-hover: #d65768;
+  --accent: #f9d95e;
+  --accent-hover: #e4c658;
+  --success: #52c7a4;
+  
+  /* حاشیه */
+  --border: #e0e0e0;
+}

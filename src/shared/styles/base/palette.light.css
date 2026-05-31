@@ -3,7 +3,7 @@ html[data-theme="light"] {
   color-scheme: light;
 
   --background-primary: #ffffff;
-  --background-secondary: #fcfbf9;
+  --background-secondary: #fdfdfd;
   --surface: #fafafa;
   --card: #ffffff;
   
@@ -20,4 +20,9 @@ html[data-theme="light"] {
   
   /* حاشیه */
   --border: #e0e0e0;
+
+  /* بکگراند ایکون ها*/
+  --brain: #fdeff1;
+  --code: #fbf6e9;
+  --users: #eff9f6;
 }

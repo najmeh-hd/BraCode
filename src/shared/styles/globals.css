@@ -10,7 +10,7 @@
   --color-background-primary: var(--background-primary);
   --color-background-secondary: var(--background-secondary);
   --color-surface: var(--surface);
-  --color-caed: var(--card);
+  --color-card: var(--card);
 
   --color-foreground: var(--foreground);
   --color-foreground-secondary: var(--foreground-secondary);
@@ -22,6 +22,10 @@
   --color-success: var(--success);
 
   --color-border: var(--border);
+
+  --color-code: var(--code);
+  --color-brain:var(--brain);
+  --color-users: var(--users)
   
 }
 

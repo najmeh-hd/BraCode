@@ -13,7 +13,6 @@ const navItems = [
   { title: "دوره ها", link: "" },
   { title: "درباره ما", link: "" },
   { title: "تماس با ما", link: "" },
-  // { title: "ورود/ثبت‌نام", link: "" },
 ];
 export default function Header({
   imageSrc,
@@ -24,7 +23,7 @@ export default function Header({
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <header className="w-full md:flex md:justify-center border-b border-border md:p-2">
+    <header className="w-full sticky top-0 z-50 bg-background-primary md:flex md:justify-center border-b border-border md:p-2">
       <nav className="flex md:hidden w-full justify-between items-center px-4">
         <Link href={routes.home()} className="flex flex-row items-center gap-2">
           <Image

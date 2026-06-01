@@ -57,5 +57,13 @@ export const images = {
     src: `${BASE_ICONS_URL}/master3.png`,
     alt: "master3",
   },
+  news1: {
+    src: `${BASE_ICONS_URL}/news1.png`,
+    alt: "news1",
+  },
+  news2: {
+    src: `${BASE_ICONS_URL}/news2.png`,
+    alt: "news2",
+  },
 };
 

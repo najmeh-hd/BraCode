@@ -8,6 +8,8 @@ import { useEffect, useState } from "react";
 import KeyFeatures from "@/views/KeyFeatures/KeyFeatures";
 import PopularCourses from "@/views/PopularCourses/PopularCourses";
 import TopTeacher from "@/views/TopTeachers/TopTeachers";
+import LatestNews from "@/views/LatestNews/LatestNews";
+import { Footer } from "@/views/Footer/Footer";
 
 export default function Home() {
   const [mounted, setMounted] = useState(false);
@@ -39,6 +41,8 @@ export default function Home() {
       <KeyFeatures />
       <PopularCourses />
       <TopTeacher />
+      <LatestNews />
+      <Footer imageSrc={images.logo.src} title={images.logo.src} />
     </>
   );
 }

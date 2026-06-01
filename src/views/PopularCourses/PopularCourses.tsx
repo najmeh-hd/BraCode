@@ -5,8 +5,11 @@ import Link from "next/link";
 import type { CardProps } from "@/components/Card/card.types";
 import { images } from "@/shared/lib/images";
 import { routes } from "@/shared/lib/routes";
+import { motion } from "motion/react";
+
 const coursesData: CardProps[] = [
   {
+    id: "python-basics",
     imageSrc: images.python.src,
     title: images.python.alt,
     subtitle: "برنامه‌نویسی",
@@ -17,6 +20,7 @@ const coursesData: CardProps[] = [
     studentsCount: 1250,
   },
   {
+    id: "ai-intro",
     imageSrc: images.ai.src,
     title: images.ai.alt,
     subtitle: "هوش مصنوعی",
@@ -28,6 +32,7 @@ const coursesData: CardProps[] = [
     studentsCount: 890,
   },
   {
+    id: "react-js",
     imageSrc: images.react.src,
     title: images.react.alt,
     subtitle: "توسعه وب",
@@ -39,6 +44,7 @@ const coursesData: CardProps[] = [
     studentsCount: 2100,
   },
   {
+    id: "data-structures",
     imageSrc: images.algorithm.src,
     title: images.algorithm.alt,
     subtitle: "علوم کامپیوتر",
@@ -63,7 +69,15 @@ export default function PopularCourses() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-5">
           {coursesData.map((course, index) => (
-            <Card key={index} {...course} />
+            <motion.div
+              key={course.id}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+            >
+              <Card key={index} {...course} />
+            </motion.div>
           ))}
         </div>
         <Link

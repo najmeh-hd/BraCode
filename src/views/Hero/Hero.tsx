@@ -5,37 +5,12 @@ import Link from "next/link";
 import { routes } from "@/shared/lib/routes";
 import { BookOpen, Play } from "lucide-react";
 import { motion } from "motion/react";
+import { images } from "@/shared/lib/images";
 
-export default function Hero({
-  imageSrc1,
-  title1,
-  imageSrc2,
-  title2,
-  imageSrc3,
-  title3,
-  imageSrc4,
-  title4,
-  imageSrc5,
-  title5,
-  imageSrc6,
-  title6,
-}: {
-  imageSrc1: string;
-  title1: string;
-  imageSrc2: string;
-  title2: string;
-  imageSrc3: string;
-  title3: string;
-  imageSrc4: string;
-  title4: string;
-  imageSrc5: string;
-  title5: string;
-  imageSrc6: string;
-  title6: string;
-}) {
+export default function Hero() {
   return (
-    <div className="w-full bg-background-secondary flex justify-center">
-      <div className="grid grig-cols-1 md:grid-cols-3 max-w-7xl w-full md:gap-10 justify-between bg-background-secondary px-5 pt-20 pb-5">
+    <div className="w-full bg-background-secondary flex justify-center py-10 ">
+      <div className="grid grig-cols-1 md:grid-cols-3 max-w-7xl w-full md:gap-10 justify-between bg-background-secondary p-4">
         <div className="flex flex-col md:col-span-2 gap-8">
           <motion.div
             initial={{ opacity: 0, x: 50 }}
@@ -44,12 +19,12 @@ export default function Hero({
           >
             <div className="flex flex-row gap-5">
               <Image
-                src={imageSrc3}
-                alt={title3}
+                src={images.robo3.src}
+                alt={images.robo3.alt}
                 width={100}
                 height={100}
                 className="w-35 h-35 hidden md:block hover:rotate-15 transition-all duration-500 ease-in"
-              ></Image>
+              />
               <h1 className="text-5xl md:text-7xl font-bold">
                 یادگیری برنامه‌نویسی را با {""}
                 <span className="bg-gradient-to-r from-primary via-accent to-success bg-clip-text text-transparent">
@@ -64,7 +39,7 @@ export default function Hero({
             </p>
             <div className="hidden gap-2 md:flex flex-row h-fit py-5">
               <Link
-                href={routes.home()}
+                href={routes.courses()}
                 className="text-black hover:bg-accent-hover border border-accent bg-accent p-5 items-center  flex gap-2 font-extrabold flex-row rounded-2xl"
               >
                 <BookOpen />
@@ -78,8 +53,8 @@ export default function Hero({
                 تماشای معرفی
               </Link>
             </div>
-            <div className="flex justify-center md:col-span-1">
-              <div className="md:hidden gap-2 flex flex-col sm:flex-row h-fit pt-15">
+            <div className="md:hidden flex justify-center md:col-span-1">
+              <div className="gap-2 flex flex-col sm:flex-row h-fit pt-15">
                 <Link
                   href={routes.home()}
                   className="text-black hover:bg-accent-hover border border-accent bg-accent p-3 items-center text-xs flex gap-2 font-extrabold flex-row rounded-2xl"
@@ -99,48 +74,25 @@ export default function Hero({
           </motion.div>
         </div>
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
+          initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="hidden md:block"
         >
           <div className="flex flex-row justify-center items-center mt-10 md:mt-0">
             <Image
-              src={imageSrc1}
-              alt={title1}
+              src={images.robo1.src}
+              alt={images.robo1.alt}
               width={100}
               height={100}
-              className="w-60 h-80 hover:-rotate-15 transition-all duration-500 ease-in"
-            ></Image>
+              className="w-40 md:w-60 h-60 md:h-90 hover:-rotate-15 transition-all duration-500 ease-in"
+            />
             <Image
-              src={imageSrc2}
-              alt={title2}
+              src={images.robo2.src}
+              alt={images.robo2.alt}
               width={100}
               height={100}
-              className="w-40 h-40 hover:-rotate-24 transition-all duration-500 ease-in"
-            ></Image>
-
-            {/* <Image
-            src={imageSrc4}
-            alt={title4}
-            width={100}
-            height={100}
-            className="w-50 h-50 -rotate-12 hover:-rotate-15 transition-all duration-500 ease-in"
-          ></Image> */}
-            {/* <Image
-            src={imageSrc5}
-            alt={title5}
-            width={100}
-            height={100}
-            className="w-50 h-50 -rotate-10 hover:rotate-15 transition-all duration-500 ease-in"
-          ></Image>
-          <Image
-            src={imageSrc6}
-            alt={title6}
-            width={100}
-            height={100}
-            className="w-50 h-50 -rotate-15 hover:rotate-15 transition-all duration-500 ease-in"
-          ></Image> */}
+              className="md:hidden w-30 h-40 hover:-rotate-24 transition-all duration-500 ease-in"
+            />
           </div>
         </motion.div>
       </div>

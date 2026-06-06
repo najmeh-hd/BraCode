@@ -3,6 +3,26 @@
 @import "./base//palette.light.css";
 
 
+/* src/shared/styles/globals.css */
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  75% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.animate-swing {
+  animation: swing 1s ease-in-out infinite;
+  transform-origin: center center;
+}
 
 @custom-variant light (&:where([data-theme=light], [data-theme=light] *));
 
@@ -11,6 +31,7 @@
   --color-background-secondary: var(--background-secondary);
   --color-surface: var(--surface);
   --color-card: var(--card);
+  --color-muted: var(--muted);
 
   --color-foreground: var(--foreground);
   --color-foreground-secondary: var(--foreground-secondary);
@@ -20,19 +41,19 @@
   --color-accent: var(--accent);
   --color-accent-hover: var(--accent-hover);
   --color-success: var(--success);
+  --color-success-hover: var(--success-hover);
 
   --color-border: var(--border);
 
   --color-code: var(--code);
-  --color-brain:var(--brain);
-  --color-users: var(--users)
-  
+  --color-brain: var(--brain);
+  --color-users: var(--users);
 }
 
 @layer base {
   body {
     background-color: var(--color-background-primary);
     color: var(--color-foreground);
-    overflow-x: hidden;
+    overflow-x: visible;
   }
 }

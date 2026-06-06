@@ -2,6 +2,15 @@ import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { routes } from "@/shared/lib/routes";
 import Image from "next/image";
+import { toPersianDigit } from "@/shared/utils/helpers";
+
+
+const navItems = [
+  { title: "صفحه اصلی", link: routes.home() },
+  { title: "دوره ها", link: routes.courses() },
+  { title: "درباره ما", link: routes.about() },
+  { title: "تماس با ما", link: routes.contact() },
+];
 
 export function Footer({
   imageSrc,
@@ -11,8 +20,7 @@ export function Footer({
   title: string;
 }) {
   return (
-    <footer className="bg-card">
-      <div className="bg-background-secondary h-20 border-b border-border"></div>
+    <footer className="bg-card bottom-0 border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
@@ -40,31 +48,19 @@ export function Footer({
 
           <div>
             <h3 className="font-bold mb-4">دسترسی سریع</h3>
-            <div className="space-y-2">
-              <Link
-                href={routes.home()}
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                صفحه اصلی
-              </Link>
-              <Link
-                href={routes.home()}
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                دوره‌ها
-              </Link>
-              <Link
-                href={routes.home()}
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                درباره ما
-              </Link>
-              <Link
-                href={routes.home()}
-                className="block text-muted-foreground hover:text-primary transition-colors"
-              >
-                تماس با ما
-              </Link>
+            <div className="space-y-2 flex flex-col">
+              {navItems.map((item) => {
+                return (
+                  <Link
+                    key={item.title}
+                    href={item.link}
+                    color="neutral"
+                    className="hover:text-primary"
+                  >
+                    {item.title}
+                  </Link>
+                );
+              })}
             </div>
           </div>
 
@@ -83,15 +79,32 @@ export function Footer({
             <div className="space-y-3">
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Mail size={18} className="text-primary" />
-                <span>info@bracode.ir</span>
+                <a
+                  href="mailto:info@bracode.ir"
+                  className="hover:text-primary transition-colors"
+                >
+                  info@bracode.ir
+                </a>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Phone size={18} className="text-accent" />
-                <span>021-12345678</span>
+                <a
+                  href="tel:02112345678"
+                  className="hover:text-accent transition-colors"
+                >
+                  {toPersianDigit("021-12345678")}
+                </a>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <MapPin size={18} className="text-success" />
-                <span>تهران، ایران</span>
+                <a
+                  href="https://www.google.com/maps?q=تهران،+ایران"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-success transition-colors"
+                >
+                  تهران، ایران
+                </a>
               </div>
             </div>
           </div>

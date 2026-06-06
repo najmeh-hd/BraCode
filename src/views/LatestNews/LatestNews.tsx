@@ -10,26 +10,29 @@ const LatestNewsData: NewsCardProps[] = [
   {
     imageSrc: images.news1.src,
     title: images.news1.alt,
-    time: "2 روز پیش",
+    time:"هفته پیش",
+    timeCount: 2,
     subtitle: "وبینار رایگان: آینده هوش مصنوعی",
   },
   {
     imageSrc: images.news2.src,
     title: images.news2.alt,
-    time: "1 هفته پیش",
+    time:"روز پیش",
+    timeCount: 1,
     subtitle: "دوره جدید Machine Learning منتشر شد",
   },
   {
     imageSrc: images.news1.src,
     title: images.news1.alt,
-    time: "2 روز پیش",
+    time:"ساعت پیش",
+    timeCount: 4,
     subtitle: "وبینار رایگان: آینده هوش مصنوعی",
   },
 ];
 
 export default function LatestNews() {
   return (
-    <div className="bg-background-primary px-5 py-20 w-full flex justify-center">
+    <div className="bg-background-primary py-20 w-full flex justify-center">
       <div className="max-w-7xl w-full flex flex-col justify-center items-center gap-10">
         <div className="w-full flex flex-col gap-3 justify-center text-center">
           <h2 className="text-4xl font-bold">آخرین اخبار</h2>
@@ -37,7 +40,7 @@ export default function LatestNews() {
             از جدیدترین رویدادها مطلع شوید.
           </p>
         </div>
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 px-5">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
           {LatestNewsData.map((LatestNew, index) => (
             <motion.div
               initial={{ opacity: 0, y: 30 }}

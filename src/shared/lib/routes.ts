@@ -1,3 +1,8 @@
 export const routes = {
-  home: () => '/',
+  home: () => "/",
+  courses: () => "/courses",
+  courseDetail: (id: string) => `/courses/${id}`,
+  about: () => "/about",
+  contact: () => "/contact",
+  auth: () => "/auth"
 };

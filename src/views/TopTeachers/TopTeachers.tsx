@@ -35,13 +35,13 @@ const TopTeacherData: TopTeachersCardProps[] = [
 
 export default function TopTeacher() {
   return (
-    <div className="bg-surface px-5 py-20 w-full flex justify-center">
+    <div className="bg-surface py-20 w-full flex justify-center">
       <div className="max-w-7xl w-full flex flex-col justify-center items-center gap-10">
         <div className="w-full flex flex-col gap-3 justify-center text-center">
           <h2 className="text-4xl font-bold">اساتید برتر</h2>
           <p className="text-foreground-secondary">یاد بگیرید از بهترین‌ها.</p>
         </div>
-        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 px-5">
+        <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-6 px-4">
           {TopTeacherData.map((TopTeacher, index) => (
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}

@@ -9,10 +9,10 @@ import { routes } from "@/shared/lib/routes";
 import { motion, AnimatePresence } from "motion/react";
 
 const navItems = [
-  { title: "صفحه اصلی", link: "./" },
-  { title: "دوره ها", link: "" },
-  { title: "درباره ما", link: "" },
-  { title: "تماس با ما", link: "" },
+  { title: "صفحه اصلی", link: routes.home() },
+  { title: "دوره ها", link: routes.courses() },
+  { title: "درباره ما", link: routes.about() },
+  { title: "تماس با ما", link: routes.contact() },
 ];
 export default function Header({
   imageSrc,
@@ -23,7 +23,7 @@ export default function Header({
 }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
-    <header className="w-full sticky top-0 z-50 bg-background-primary md:flex md:justify-center border-b border-border md:p-2">
+    <header className="w-full fixed top-0 z-50 bg-background-primary md:flex md:justify-center border-b border-border md:p-2">
       <nav className="flex md:hidden w-full justify-between items-center px-4">
         <Link href={routes.home()} className="flex flex-row items-center gap-2">
           <Image
@@ -72,8 +72,8 @@ export default function Header({
           <ThemeToggle />
 
           <Link
-            href={routes.home()}
-            className="text-white font-bold bg-primary hover:bg-primary-hover p-2 px-5 rounded-xl flex justify-center"
+            href={routes.auth()}
+            className="text-white font-bold bg-primary hover:bg-primary-hover p-2 px-5 rounded-2xl flex justify-center"
           >
             ورود / ثبت‌نام
           </Link>
@@ -96,6 +96,7 @@ export default function Header({
                     href={item.link}
                     color="neutral"
                     className=""
+                    onClick={() => setIsMenuOpen(false)}
                   >
                     {item.title}
                   </Link>
@@ -103,8 +104,9 @@ export default function Header({
               })}
               <ThemeToggle />
               <Link
-                href={routes.home()}
+                href={routes.auth()}
                 className="w-full text-white font-bold bg-primary p-2 rounded-xl flex justify-center"
+                onClick={() => setIsMenuOpen(false)}
               >
                 ورود / ثبت‌نام
               </Link>

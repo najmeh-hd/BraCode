@@ -65,5 +65,5 @@ export const images = {
     src: `${BASE_ICONS_URL}/news2.png`,
     alt: "news2",
   },
+  aboutUs: { src: `${BASE_ICONS_URL}/aboutUs.png`, alt: "aboutUs" },
 };
-
